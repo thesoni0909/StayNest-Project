@@ -1,0 +1,22 @@
+{
+  "name": "staynest-project",
+  "version": "1.0.0",
+  "description": "\"A full-stack property rental platform where hosts can create and manage property listings, while guests can browse, search, and book accommodations with authentication, reviews, and booking management.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesoni0909/StayNest-Project.git"
+  },
+  "author": "\"Soni Kumari\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thesoni0909/StayNest-Project/issues"
+  },
+  "homepage": "https://github.com/thesoni0909/StayNest-Project#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
