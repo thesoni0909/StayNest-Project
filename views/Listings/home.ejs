@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayNest | Holiday rentals, cabins, beach houses & more</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>All Listings</h1>
+    <div class="parent">
+        <% for(let listing of AllListings){ %>
+            <div class="listing">
+                <img src="<%= listing.image %>">
+                <h3><a href="http://localhost:3000/listings/<%= listing._id %>"><%= listing.title %></a></h3>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
