@@ -18,6 +18,9 @@ app.set("views", path.join(__dirname, "/views"));
 // serving static files
 app.use(express.static(path.join(__dirname,"/public")));
 
+// parsing form data
+app.use(express.urlencoded({extended : true}));
+
 // establishing connection between mongoDB database
 async function main(){
     await mongoose.connect('mongodb://127.0.0.1:27017/StayNest');
@@ -50,6 +53,16 @@ app.get("/testing",(req, res) => {
 app.get("/listings", async (req, res) => {
     const AllListings = await Listing.find();
     res.render("Listings/home.ejs", { AllListings });
+});
+
+// create route
+app.get("/listings/new", (req, res) => {
+    res.render("Listings/create.ejs");
+});
+
+app.post("/listings", async (req, res) => {
+    await new Listing(req.body).save();
+    res.redirect("/listings");
 });
 
 // show route
