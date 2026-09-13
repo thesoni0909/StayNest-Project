@@ -8,6 +8,10 @@ const mongoose = require('mongoose');
 // requiring model "Listing"
 const { Listing } = require('./models/listing');
 
+// requiring methodOverride
+const methodOverride = require('method-override');
+app.use(methodOverride("_method"));
+
 // requiring path
 const path = require('path');
 
@@ -64,6 +68,27 @@ app.post("/listings", async (req, res) => {
     await new Listing(req.body).save();
     res.redirect("/listings");
 });
+
+// update route
+app.get("/listings/:id/edit", async (req, res) => {
+    let { id } = req.params;
+    const listing = await Listing.findById(id);
+    res.render("Listings/update.ejs", { listing });
+});
+
+app.put("/listings/:id", async (req, res) => {
+    let { id } = req.params;
+    console.log(req.body);
+    await Listing.findByIdAndUpdate(id, req.body);
+    res.redirect(`/listings/${id}`);
+});
+
+// delete route
+app.delete("/listings/:id", async (req, res) => {
+    let { id } = req.params;
+    await Listing.findByIdAndDelete(id);
+    res.redirect('/listings');
+})
 
 // show route
 app.get("/listings/:id", async (req, res) => {
