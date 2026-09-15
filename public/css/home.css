@@ -1,0 +1,7 @@
+body{
+    background-color: rgb(232, 255, 255) !important;
+}
+.listing>img{
+    height: 250px;
+    width: 250px;
+}

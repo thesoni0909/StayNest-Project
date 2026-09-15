@@ -15,9 +15,15 @@ app.use(methodOverride("_method"));
 // requiring path
 const path = require('path');
 
+// requiring ejs-mate
+const ejsMate = require('ejs-mate');
+
 // set template engine "ejs"
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
+
+// set layout template engine "ejs-mate"
+app.engine("ejs", ejsMate);
 
 // serving static files
 app.use(express.static(path.join(__dirname,"/public")));
