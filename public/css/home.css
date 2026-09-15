@@ -1,6 +1,83 @@
-body{
-    background-color: rgb(232, 255, 255) !important;
+/* navbar */
+.nav-link{
+    font-weight: 600 !important;
+    color: black !important;
+    font-size: 1.25rem !important;
+    margin-right: 0.9rem;
 }
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.fa-compass{
+    font-size: 2rem !important;
+    color: #fe424d;
+}
+
+.navbar-brand-name{
+    font-size: 1.75rem;
+    color: #fe424d;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.navbar-nav{
+    margin-left: 2rem;
+}
+
+.navbar{
+    height: 6rem;
+}
+
+/* footer */
+.f-parent{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2.25rem 4.75rem 2.25rem;
+    flex-wrap: wrap;
+}
+
+.f-info>a{
+    margin-right: 0.95rem;
+    text-decoration: none;
+    color: black;
+}
+
+.f-info>a:hover{
+    text-decoration: underline;
+}
+
+.f-icons{
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+}
+
+/* cards */
+#heading{
+    font-size: 1.75rem !important;
+}
+
+.row{
+    gap: 2rem !important;
+}
+
+.card{
+    padding: 0 !important;
+    border: none !important;
+}
+
+.card-img-top{
+    border-radius: 2.25rem !important;
+}
+
+.card-img-top{
+    height: 20rem;
+}
+
 .listing>img{
     height: 250px;
     width: 250px;

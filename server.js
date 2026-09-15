@@ -59,6 +59,11 @@ app.get("/testing",(req, res) => {
     res.send("Successfully Saved");
 });
 
+// root route
+app.get("/", (req, res) => {
+    res.send("Successfully started");
+});
+
 // home route
 app.get("/listings", async (req, res) => {
     const AllListings = await Listing.find();
